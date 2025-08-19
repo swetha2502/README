@@ -1,0 +1,32 @@
+package exceptionhandling;
+import java.util.Scanner;
+public class ExceptionHandling {
+	public static void main(String[] args) {
+		// Exception Handling (Arithmetic Exception & ArrayIndexOutOfBoundsException) using try, throw, catch, finally blocks.
+		int a[]= {10,20,30,40};
+		try {
+			int n;
+			Scanner ob=new Scanner(System.in);
+			System.out.println("Enter the value of n: ");
+			n=ob.nextInt();
+			float c=(float)a[0]/(float)n;
+			if(n==0) {
+				throw new ArithmeticException("0 is an invalid number. Enter the new number.");
+			}
+			else {
+				System.out.println("The value of 'c' is: "+c);
+			}
+			System.out.println("The value in the array is : "+a[5]);
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("The System's error is: "+e);
+		}
+		finally {
+			System.out.println("The program functions anyway. ");
+		}
+	System.out.println("The present values in array are: ");
+	for(int i=0; i<a.length; i++) {
+		System.out.print(a[i]+" ");
+	}
+  }
+}
